@@ -295,6 +295,18 @@ with st.sidebar:
     st.markdown('<div class="sidebar-label">Loaded Documents</div>', unsafe_allow_html=True)
     doc_placeholder = st.container()
 
+    if st.session_state.messages:
+        st.markdown('<div class="sidebar-label">Chat History</div>', unsafe_allow_html=True)
+        for msg in st.session_state.messages:
+            if msg["role"] == "user":
+                snippet = msg["content"].replace("\n", " ")
+                if len(snippet) > 40:
+                    snippet = snippet[:40].rstrip() + "..."
+                st.markdown(f'<div class="file-badge">💬 {snippet}</div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="sidebar-label">Chat History</div>', unsafe_allow_html=True)
+        st.markdown('<div class="file-badge">No chat history yet</div>', unsafe_allow_html=True)
+
     st.markdown("---")
     st.markdown("""
     <div style="font-size:0.72rem;color:#334155;line-height:1.6;">
