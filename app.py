@@ -259,12 +259,14 @@ hr { border-color: rgba(99,179,237,0.08) !important; }
 }
 </style>
 """, unsafe_allow_html=True)
-
 # ─── API KEY ─────────────────────────────────────────────────────────────────────
-groq_api_key = os.getenv("GROQ_API_KEY")
-if not groq_api_key:
-    st.error("⚠️  GROQ_API_KEY missing in your .env file.")
-    st.stop()
+
+groq_api_key = st.secrets["GROQ_API_KEY"]
+
+# ─── SESSION STATE ────────────────────────────────────────────────────────────────
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 # ─── SESSION STATE ────────────────────────────────────────────────────────────────
 if "messages" not in st.session_state:
