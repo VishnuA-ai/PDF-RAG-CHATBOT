@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Syne&weight=800&size=34&pause=1000&color=00F7FF&center=true&vCenter=true&width=900&lines=PDF+RAG+Chatbot+🚀;AI+Research+Assistant+📚;Chat+with+Multiple+PDFs+💬;Powered+by+Groq+%2B+LLaMA+3.3+70B" alt="Typing SVG" />
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=SYNE&weight=800&size=34&pause=1000&color=00F7FF&center=true&vCenter=true&width=9005&height=80&lines=PDF+RAG+Chatbot+%F0%9F%9A%80;AI+Research+Assistant+%F0%9F%93%9A;Chat+with+Multiple+PDFs+%F0%9F%92%AC)](https://git.io/typing-svg)
 
 <br/>
 
