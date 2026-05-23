@@ -1,26 +1,37 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Syne&weight=800&size=36&pause=1000&color=06B6D4&center=true&vCenter=true&width=500&lines=ResearchMind+AI+🧠;Chat+with+your+PDFs;Powered+by+Groq+%2B+LLaMA-3" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Syne&weight=800&size=34&pause=1000&color=00F7FF&center=true&vCenter=true&width=900&lines=PDF+RAG+Chatbot+🚀;AI+Research+Assistant+📚;Chat+with+Multiple+PDFs+💬;Powered+by+Groq+%2B+LLaMA+3.3+70B" alt="Typing SVG" />
 
 <br/>
 
 <p align="center">
+
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+
   <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Groq-LLaMA_3.3_70B-00A67E?style=for-the-badge&logo=meta&logoColor=white"/>
-  <img src="https://img.shields.io/badge/FAISS-Vector_DB-0467DF?style=for-the-badge&logo=meta&logoColor=white"/>
+
+  <img src="https://img.shields.io/badge/Groq-LLaMA_3.3_70B-00A67E?style=for-the-badge&logo=groq&logoColor=white"/>
+
+  <img src="https://img.shields.io/badge/FAISS-Vector_DB-0467DF?style=for-the-badge&logo=databricks&logoColor=white"/>
+
   <img src="https://img.shields.io/badge/HuggingFace-Embeddings-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black"/>
+
+  <img src="https://img.shields.io/badge/LangChain-RAG_Framework-00C853?style=for-the-badge&logo=chainlink&logoColor=white"/>
+
 </p>
 
 <p align="center">
-  <b>Upload PDFs. Ask anything. Get grounded, cited answers — instantly.</b><br/>
-  <sub>A production-grade RAG app with a dark, premium UI built on LangChain + Groq.</sub>
+  <b>Upload PDFs. Ask anything. Get grounded, intelligent answers instantly.</b>
+  <br/><br/>
+  <sub>
+    A modern Multi-PDF Conversational RAG application built with
+    Streamlit, LangChain, FAISS, HuggingFace Embeddings, and Groq LLaMA 3.3 70B.
+  </sub>
 </p>
-
-<br/>
 
 </div>
 
+---
 ---
 
 ## ✨ Features
