@@ -318,8 +318,8 @@ def create_qa_chain(vectorstore):
     llm = ChatGroq(
         model="llama-3.3-70b-versatile",
         groq_api_key=groq_api_key,
-        temperature=0.3,
-        max_tokens=1000
+        temperature=0.2,
+        max_tokens=512
     )
     
     prompt_template = """You are an intelligent research assistant. Use the provided context to answer the user's question accurately.
