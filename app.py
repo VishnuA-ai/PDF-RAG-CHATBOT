@@ -287,7 +287,8 @@ def process_pdfs(uploaded_files):
             continue
     
     if not all_docs:
-        st.error("No valid documents found")
+        st.error("❌ No text found in PDF. Try uploading a different file.")
+        st.stop()
         return None, metadata
     
     status_text.text("✂️ Splitting documents...")
@@ -313,6 +314,7 @@ def process_pdfs(uploaded_files):
 
 def create_qa_chain(vectorstore):
     """Create RAG chain using LCEL (LangChain Expression Language)"""
+    # Verify model name - MUST be exactly llama-3.3-70b-versatile
     llm = ChatGroq(
         model="llama-3.3-70b-versatile",
         groq_api_key=groq_api_key,
@@ -346,11 +348,14 @@ Answer:"""
     )
     
     def format_docs(docs):
-        """Format retrieved documents"""
-        return "\n\n".join(
+        """Format retrieved documents with context truncation"""
+        context = "\n\n".join(
             f"[Source: {doc.metadata.get('source', 'Unknown')}]\n{doc.page_content}"
             for doc in docs
         )
+        # Truncate context to avoid 400 errors from Groq
+        context = context[:12000]
+        return context
     
     # Build LCEL chain
     chain = (
@@ -534,8 +539,12 @@ if st.session_state.vectorstore:
                     # Create chain and retriever
                     qa_chain, retriever = create_qa_chain(st.session_state.vectorstore)
                     
-                    # Invoke chain
-                    answer = qa_chain.invoke(user_input)
+                    # Invoke chain with explicit error handling
+                    try:
+                        answer = qa_chain.invoke(user_input)
+                    except Exception as e:
+                        st.error(f"❌ LLM Error: {str(e)}")
+                        raise
                     
                     # Get source documents
                     docs = retriever.get_relevant_documents(user_input)
@@ -576,3 +585,5 @@ else:
         3. **Ask Questions** - Type your question in the chat box
         4. **Get Answers** - Get instant answers with source citations
         """)
+        
+    
